@@ -2,58 +2,38 @@
 
 var imageSilo =[];
 var dir = '/Users/owy1/codefellows/201/Bus-Mall/images/';
-var left = document.getElementById('foto1');
-var center = document.getElementById('foto2');
-var right = document.getElementById('foto3');
-var gutter = document.getElementById('outside');
-var imageList = document.getElementById('tally');
+var left = document.getElementById('left');
+var center = document.getElementById('center');
+var right = document.getElementById('right');
+var gutter = document.getElementById('container');
+// var imageList = document.getElementById('tally');
 var currentThree = [];
 var currentThreeIndex = [];
+var names = ['bag','banana','bathroom','boots','breakfast','bubblegum','chair','cthulthu','dog-duct','dragon','pen','pet-sweep','scissors','shark','sweep','tauntaun','unicorn','usb','water-can','wine-glass'];
 
 // create object
 function Image(name) {
 this.imageName = dir+name+'.jpg';
-this.used = false;
+this.repeat = false;
 this.imageTally = 0;
 this.imageViews = 0;
-this.image = name;
+this.image = name
 imageSilo.push(this);
 }
 
 // new instances
-new Image('bag');
-new Image('banana');
-new Image('bathroom');
-new Image('boots');
-new Image('breakfast');
-new Image('bubblegum');
-new Image('chair');
-new Image('cthulhu');
-new Image('dog-duck');
-new Image('dragon');
-new Image('pen');
-new Image('pet-sweep');
-new Image('scissors');
-new Image('shark');
-new Image('sweep');
-new Image('tauntaun');
-new Image('unicorn');
-new Image('usb');
-new Image('water-can');
-new Image('wine-glass');
+for(var i=0; i<names.length; i++) {
+new Image(names[i]);
 // console.log(imageSilo);
 // generate random index
-function selectRandomFoto() {
- var randomIndex = Math.floor(Math.random()*imageSilo.length);
-return(randomIndex);
+function selectRandNum() {
+return Math.floor(Math.random()*imageSilo.length);
 }
 
-function acctRandomFoto() {
-// var currentThree = [];
-// var currentThreeIndex = [];
+function SelectRandFoto() {
 
 for (var i = 0; i<3; i++) {
-  var temp = selectRandomFoto();
+  var temp = selectRandomNum();
   currentThree.push(imageSilo[temp].image);
   currentThreeIndex.push(temp);
   imageSilo[temp].used = true;
