@@ -1,9 +1,15 @@
 body {
   font-family: helvetica;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
-section {
-  float:left;
+.instruction {
+  width: 100%;
+}
+
+#outside {
+  width:100%;
 }
 
 main {
@@ -24,4 +30,10 @@ main {
   height: 150px;
   width: 150px;
   border: 1px solid #0F1F1F;
+}
+
+.summary {
+  clear: both;
+  width: 100%;
+
 }
