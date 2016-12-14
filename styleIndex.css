@@ -1,4 +1,4 @@
-/*body {
+body {
   font-family: helvetica;
   margin-top: 30px;
   margin-left: 30px;
@@ -17,34 +17,9 @@ main {
   margin: 30px auto;
 }
 
-#always_three li {
-  float: left;
-  margin: 30px 30px 30px 0;
-}
-
-#always_three li:last-child {
-  margin-right: 0px;
-}
-
-#always_three li img {
-  height: 150px;
-  width: 150px;
-  border: 1px solid #0F1F1F;
-}
-
-.summary {
-  clear: both;
-  width: 100%;
-
-}*/
-
 img {
-  width: 150px;
-  display: inline-block;
+  width: 25%;
+  height: 200px;
+  border: 5px solid black;
   margin: 20px;
-}
-
-#always_three {
-  width: 100%;
-  display: inline-block;
 }
