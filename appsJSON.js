@@ -1,7 +1,8 @@
 'use strict';
 
 var imageSilo =[];
-var dir = '/Users/owy1/codefellows/201/Bus-Mall/images/';
+// var dir = '/Users/owy1/codefellows/201/Bus-Mall/images/';
+// var dir = '/Users/nguyenj1203/codfellows/201/programming_parterns/ophelia/Bus-Mall/';
 var gutter = document.getElementById('container');
 var tally = document.getElementById('tally');
 var currentThreeIndex = [];
@@ -9,11 +10,11 @@ var totClick = 0;
 var allotClick = 25;
 var ctx = document.getElementById("myChart").getContext("2d");
 
-var names = ['bag','banana','bathroom','boots','breakfast','bubblegum','chair','cthulhu','dog-duck','dragon','pen','pet-sweep','scissors','shark','sweep','tauntaun','unicorn','usb','water-can','wine-glass'];
+var names = ['bag','banana','bathroom','boots','breakfast','bubblegum','chair','cthulhu','dog_duck','dragon','pen','scissors','shark','sweep','tauntaun','unicorn','usb','water_can','wine_glass','pet-sweep'];
 
 // create object
 function Image(name) {
-this.imageName = dir + name + '.jpg';
+this.imageName = 'img/' + name + '.jpg';
 this.repeat = false;
 this.imageTally = 0;
 this.imageViews = 0;
@@ -74,7 +75,7 @@ function handleClickInput(event) {
   event.preventDefault();
 
   var a = event.target.id;
- console.log(a);
+ // console.log(a);
 
   if( a === 'container'){
     alert('CLICK ON A PICTURE!!!! NOT THE BACKGROUND!!!');
@@ -98,7 +99,17 @@ totClick += 1;
    alert ('Session ends.');
    tally.innerHTML='';
    return renderChart();
+
+   if(!localStorage.getItem('bob')){
+    //  if(!localStorage.bob){
+    localStorage.setItem('bob',JSON.stringify(imageSilo));
+  } else {
+    var retrievedData = localStorage.getItem('bob');
+    var imageSilo2 = JSON.parse(retrievedData);
+    localStorage.setItem('bob',JSON.stringify(imageSilo2));
+  }//end of imageMaker function
  }
+
  renderFoto();
  tally.innerHTML='';
  renderList();
