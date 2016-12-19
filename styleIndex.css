@@ -7,6 +7,8 @@ body {
 
 .instruction {
   width: 100%;
+  font-style: oblique;;
+  border: 5px groove #FF1948;
 }
 
 #container {
