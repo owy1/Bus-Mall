@@ -98,7 +98,7 @@ function handleClickInput(event) {
   totClick += 1;
 
   if (totClick > allotClick) {
-    alert ('Session ends.');
+    alert ('Congratulation! You have completed the survey.');
     tally.innerHTML='';
     chartArray();
     renderChart1();
